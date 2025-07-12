@@ -13,6 +13,16 @@ android {
     buildTypes {
         create("foss_release") {
         }
+        create("nonMinifiedFOSS") {
+        }
+        create("nonMinifiedRelease") {
+        }
+        create("benchmarkRelease") {
+        }
+        create("benchmarkFOSS") {
+        }
+        create("FOSS") {
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21

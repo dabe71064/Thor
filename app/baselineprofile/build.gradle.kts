@@ -25,6 +25,14 @@ android {
     }
 
     targetProjectPath = ":app"
+    buildTypes {
+        create("FOSS") {
+        }
+        create("nonMinifiedFOSS") {
+        }
+        create("benchmarkFOSS") {
+        }
+    }
 
 }
 

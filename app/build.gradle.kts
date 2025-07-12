@@ -46,6 +46,9 @@ android {
                 debugSymbolLevel = "SYMBOL_TABLE"
             }
         }
+        create("FOSS") {
+            isMinifyEnabled = false
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
