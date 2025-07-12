@@ -17,6 +17,15 @@ kotlin {
     }
 }
 
+tasks.withType<Jar>().configureEach {
+    isReproducibleFileOrder = true
+    isPreserveFileTimestamps = false
+}
+tasks.withType<Zip>().configureEach {
+    isReproducibleFileOrder = true
+    isPreserveFileTimestamps = false
+}
+
 android {
 
     namespace = "com.valhalla.thor"
