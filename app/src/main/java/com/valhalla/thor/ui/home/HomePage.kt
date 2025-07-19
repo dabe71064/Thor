@@ -76,7 +76,6 @@ fun HomePage(
     var appAction: AppClickAction? by remember { mutableStateOf(null) }
     var multiAction: MultiAppAction? by remember { mutableStateOf(null) }
 
-    var reinstalling by remember { mutableStateOf(false) }
     var canExit by remember { mutableStateOf(false) }
     var showTerminate by remember { mutableStateOf(false) }
     var logObserver by remember { mutableStateOf(emptyList<String>()) }
@@ -218,7 +217,6 @@ fun HomePage(
 
 
     LaunchedEffect(appAction) {
-        reinstalling = false
         canExit = false
         termLoggerTitle = when (appAction) {
             is AppClickAction.AppInfoSettings -> "Opening AppInfo"
@@ -226,12 +224,10 @@ fun HomePage(
             is AppClickAction.Kill -> "War Machine"
             is AppClickAction.Launch -> "Launch Pad"
             is AppClickAction.Reinstall -> {
-                reinstalling = true
                 "Reinstalling App..,"
             }
 
             AppClickAction.ReinstallAll -> {
-                reinstalling = true
                 "Reinstalling Apps..,"
             }
 
@@ -241,7 +237,6 @@ fun HomePage(
 
             else -> {
                 logObserver = emptyList()
-                reinstalling = false
                 ""
             }
         }
